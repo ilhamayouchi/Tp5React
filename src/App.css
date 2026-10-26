@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+  counter-reset: section;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page h1 {
+  margin: 0 0 36px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1f2430;
+}
+.page h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 14px;
+  background: #f0a020;
+  border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.panneau {
+  counter-increment: section;
+  background: #ffffff;
+  border: 1px solid #e8e2d4;
+  border-left: 4px solid #f0a020;
+  border-radius: 6px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(60, 45, 10, 0.06);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.panneau h2 {
+  margin: 0 0 18px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2430;
+}
+.panneau h2::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  color: #a86500;
+  background: #fff1d6;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.panneau form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.panneau input {
+  flex: 1 1 180px;
+  background: #fbfaf7;
+  border: 1px solid #ddd5c4;
+  border-radius: 6px;
+  padding: 11px 12px;
+  color: #1f2430;
+  font-size: 14px;
+  outline: none;
 }
+.panneau > div > input { display: block; width: 100%; margin-bottom: 10px; }
+.panneau input::placeholder { color: #9a9283; }
+.panneau input:focus {
+  border-color: #f0a020;
+  box-shadow: 0 0 0 3px rgba(240, 160, 32, 0.2);
+  background: #fff;
+}
+
+.panneau p {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: #5c6270;
+}
+.panneau div > p:first-child { margin-top: 0; }
+.panneau p + button { margin-top: 14px; }
+
+.panneau button {
+  background: #f0a020;
+  color: #2a1a00;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 18px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.panneau button:hover { background: #e08f0e; }
